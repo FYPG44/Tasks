@@ -5,12 +5,13 @@ def plot_td(X, Y, Z):
     x,y,z = np.indices((X, Y, Z))
     fig = plt.figure()
     ax = plt.axes(projection='3d')
-    with open("output.txt") as f:
+    with open("output_nsh.txt") as f:
         for line in f.readlines():
             tmp = list(map(int, line.rstrip().split(",")))
             i, j, k = tmp[0], tmp[1], tmp[2]
-            # voxel = (x == (i)) & (y == (j)) & (z==(k))
-            ax.scatter(i,j,k)
+            voxel = (x == (i)) & (y == (j)) & (z==(k))
+            ax.voxels(voxel, facecolor = "green", edgecolor = "black")
+            # ax.scatter(i,j,k)
     
     f.close()
     plt.show()

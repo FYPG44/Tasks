@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std; 
-#define OFFSET 15
+#define OFFSET 0
 int r = 10; 
 unordered_set<string> S; 
 
@@ -24,7 +24,7 @@ void insertToSphereSet(vector<int>& nums) {
     S.insert(to_string(-x + OFFSET) + "," + to_string(-y + OFFSET) + "," + to_string(-z + OFFSET)); 
     S.insert(to_string(x + OFFSET) + "," + to_string(-y + OFFSET) + "," + to_string(z + OFFSET)); 
     S.insert(to_string(x + OFFSET) + "," + to_string(-y + OFFSET) + "," + to_string(-z + OFFSET)); 
-    S.insert(to_string(-x + OFFSET) + "," + to_string(-y + OFFSET) + "," + to_string(z + OFFSET)); 
+    // S.insert(to_string(-x + OFFSET) + "," + to_string(-y + OFFSET) + "," + to_string(z + OFFSET)); 
     S.insert(to_string(x + OFFSET) + "," + to_string(y + OFFSET) + "," + to_string(-z + OFFSET)); 
 
 } 

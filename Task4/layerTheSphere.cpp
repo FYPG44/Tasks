@@ -2,7 +2,7 @@
 using namespace std; 
 #define OFFSET 15
 
-int r1 = 6, r2 = 10; 
+int r1 = 2, r2 = 3; 
 int k = -r2; 
 int i_10 = 0, i_20 = 0; 
 int s_10 = k*k, s_20 = k*k; 
@@ -120,7 +120,7 @@ void findXRangeRun() {
             update(i1, s1, 1); u = R1 - max(abs(i1), maxjk); 
         }
         update(i1, s1, -1); 
-        while (s2 > v) {
+        while (s2 >= v) {
             update(i2, s2, 1); v = R2 + max(abs(i2), maxjk); 
         }
     } else if (q == 4) {
@@ -190,3 +190,29 @@ int main()
     return 0;
 
 }
+
+
+// INTRODUCTION -> (2-3 slides)
+    aim: To generate a 3D sphere using modified digital circle algorithm (Title)
+    what+applications
+// MOTIVATION (1 slide)
+    why:
+    there is a necessity to design a 3d sphere algorithm that generates hole free sphere
+// LITERATURE REVIEW - 10 papers, table format (3-4 slides)
+     paper name | key features of algo | disadv and shortcomings | 
+// OBJECTIVES - 
+   1) Literature gap - Present algo are mostly done in continuous points, not for discrete points, our algo is discrete domain
+   2) Missing voxels - give output SSes / discontin in plane (meaning):
+   Objectives: remove missing voxels by modifiying the digital circle algorithm
+   Solutions: Ander's arithmetical circle, checks distance at every step, so complex and inefficient
+   Novelty: More efficient, generates hole free 3D sphere in 1 go
+// PROPOSED WORK
+   - Introduce a circle similar to arithmetic circle, where there is no distance checking
+   - Use basic theory of distance space to define our circle
+   - Modif of DCS
+
+// FUTURE WORK
+   - Desc of algo
+   - Complexity analysis
+// REFERENCES
+// PRINTOUT OF THE REPORT - same as PPT, with more description 

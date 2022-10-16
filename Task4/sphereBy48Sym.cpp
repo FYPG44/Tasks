@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std; 
-#define OFFSET 15
+#define OFFSET 0
 
 void update(int& j, int& s, int p) {
     s = s + p*2*j + 1; 
@@ -18,7 +18,6 @@ vector<vector<int>> findPermutations(vector<int>& nums) {
 
     return perms; 
 }
-
 void insertToSphereSet(vector<int>& nums, unordered_set<string>& S) {
     int x = nums[0], y = nums[1], z = nums[2]; 
     S.insert(to_string(x + OFFSET) + "," + to_string(y + OFFSET) + "," + to_string(z + OFFSET)); 
@@ -32,6 +31,7 @@ void insertToSphereSet(vector<int>& nums, unordered_set<string>& S) {
     S.insert(to_string(x + OFFSET) + "," + to_string(y + OFFSET) + "," + to_string(-z + OFFSET)); 
 
 } 
+
 
 
 void include48Sym(unordered_set<string>& S, int x, int y, int z) {
